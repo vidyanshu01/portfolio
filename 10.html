@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vidyanshu Kushawaha - Portfolio</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Responsive Meta Tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Basic CSS Reset and Styles -->
+  <style>
+    /* ========== Global Styles ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth; /* Smooth scrolling */
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5; /* Light Mode Background */
+      color: #333;              /* Light Mode Text Color */
+      transition: background-color 0.3s, color 0.3s;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    
+    /* ========== Dark Mode Class ========== */
+    body.dark-mode {
+      background-color: #121212; /* Dark Mode Background */
+      color: #f5f5f5;           /* Dark Mode Text Color */
+    }
+
+    /* ========== Header & Navigation ========== */
+    header {
+      background-color: #222;
+      color: #fff;
+      padding: 1rem;
+    }
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav ul {
+      display: flex;
+      gap: 1rem;
+    }
+    nav li {
+      padding: 0.5rem;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    nav li:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    .theme-toggle-btn {
+      background-color: #00bcd4;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .theme-toggle-btn:hover {
+      background-color: #0097a7;
+    }
+
+    /* ========== Main Content ========== */
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* About Section */
+    #about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    #about img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #00bcd4;
+    }
+    #about-text {
+      flex: 1;
+      min-width: 250px;
+    }
+    #about-text h1 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: #00bcd4;
+    }
+
+    /* Projects Section */
+    #projects {
+      margin-bottom: 3rem;
+    }
+    #projects h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #00bcd4;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .project {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .project:hover {
+      transform: scale(1.02);
+    }
+    /* Light mode project background fix */
+    body:not(.dark-mode) .project {
+      background-color: #eee;
+      color: #333;
+    }
+
+    /* Skills Section */
+    #skills {
+      margin-bottom: 3rem;
+    }
+    #skills h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #00bcd4;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .skill-item {
+      background: #333;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+    }
+    body:not(.dark-mode) .skill-item {
+      background-color: #eee;
+      color: #333;
+    }
+.social-media{
+    font-size: 40px;
+    padding: 10px ;
+}
+.social-media a:hover{
+    background: rgb(189, 176, 176);
+    color: #1f242d;
+    box-shadow: 0 0 20px black;
+} */
+
+    /* Contact Section */
+    #contact h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #00bcd4;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.5rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      outline: none;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background-color: #00bcd4;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #0097a7;
+    }
+
+    /* ========== Footer ========== */
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== Header & Navigation ========== -->
+  <header>
+    <div class="header-container">
+      <div class="logo">Vidyanshu</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle-btn" id="theme-toggle">Toggle Dark Mode</button>
+    </div>
+  </header>
+
+  <!-- ========== Main Content ========== -->
+  <main>
+    <!-- About Section -->
+    <section id="about">
+      <!-- Replace the src below with your actual image path or URL -->
+      <img src="pic.jpg" alt="Profile Picture" />
+      <div id="about-text">
+        <h1>Vidyanshu Kushawaha</h1>
+        <p>
+          Hello! I'm Vidyanshu Kushawaha, a BTech CSE 2nd-year student. I am passionate about 
+          software development, web technologies, and all things tech. I love creating innovative 
+          solutions and learning new programming languages.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project">
+          <h3>Project-1</h3>
+          <p>
+                This project is a reflection of my journey as a passionate BTech CSE student. Developed using HTML, CSS, and JavaScript, the portfolio showcases a dynamic, responsive design with a sleek dark mode for comfortable viewing in any lighting. Featuring dedicated sections for projects, skills, and contact information, the site not only highlights my technical expertise but also emphasizes a user-friendly experience with smooth navigation and intuitive interactions. This portfolio is more than just a website—it's a showcase of my commitment to creativity, innovation, and continuous learning in the ever-evolving field of technology.
+          </p>
+          <p>Project LInk:- <a href=""></a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <div class="skill-item">HTML5</div>
+        <div class="skill-item">CSS3</div>
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">C++</div>
+        <div class="skill-item">Python</div>
+        <!-- Add more skills as needed -->
+      </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+    <div class="social-media">
+        <a href="#" style="--i:7"><i class='bx bxl-instagram'></i></a>
+        <a href="#" style="--i:8"><i class='bx bxl-linkedin-square'></i></a>
+        <a href="#" style="--i:9"><i class='bx bxl-whatsapp' ></i></a>
+        <a href="#" style="--i:10"><i class='bx bxl-github'></i></a>
+        <a href="#" style="--i:11"><i class='bx bxl-twitter' ></i></a>
+</div>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer>
+    <p>&copy; 2025 Vidyanshu Kushawaha. All rights reserved.</p>
+  </footer>
+
+  <!-- ========== JavaScript ========== -->
+  <script>
+    // Toggle Dark Mode
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+</body>
+</html>
